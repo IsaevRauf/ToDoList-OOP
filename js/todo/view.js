@@ -46,7 +46,11 @@ export default class View {
     const taskElement = this.element.todoList.querySelectorAll(".todo-item");
     taskElement.forEach((value) => {
       if (value.id == id) {
-        value.querySelector("span").classList.toggle("completed");
+        if (value.querySelector("span").classList.contains("completed")) {
+          value.querySelector("span").classList.remove("completed");
+        } else {
+          value.querySelector("span").classList.add("completed");
+        }
       }
     });
     // const spanTextElement = taskElement.querySelector('span')
